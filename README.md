@@ -26,9 +26,9 @@ putup ./$PARENT_DIR_NAME/ \
     --very-verbose \
     --eric-ext
 
-# By inheriting from pyscaffold.extensions.Extension, a default CLI option that 
-# already activates the extension will be created, based on the dasherized version 
-# of the name in the setuptools entry point. In the example above, the automatically 
+# By inheriting from pyscaffold.extensions.Extension, a default CLI option that
+# already activates the extension will be created, based on the dasherized version
+# of the name in the setuptools entry point. In the example above, the automatically
 # generated option will be --awesome-files.
 ```
 

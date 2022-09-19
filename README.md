@@ -6,6 +6,32 @@ Attempting to create an extension for the production python course
 
 Just install this package with `pip install ${project}` and note that `putup -h` shows a new option `--eric_ext`. Use this flag to ...
 
+```bash
+#!/bin/bash
+
+# git clone <this repo>
+# pip install -e /path/to/where/you/cloned/<this repo>
+
+PARENT_DIR_NAME="my-cool-package"
+
+putup ./$PARENT_DIR_NAME/ \
+    --name "my-cool-package" \
+    --package "my_cool_pkg" \
+    --description "A description for your package" \
+    --license MIT \
+    --url "https://ericriddoch.info" \
+    --github-actions \
+    --venv ./venv/ \
+    --force \
+    --very-verbose \
+    --eric-ext
+
+# By inheriting from pyscaffold.extensions.Extension, a default CLI option that 
+# already activates the extension will be created, based on the dasherized version 
+# of the name in the setuptools entry point. In the example above, the automatically 
+# generated option will be --awesome-files.
+```
+
 
 ## Making Changes & Contributing
 

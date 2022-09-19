@@ -40,3 +40,9 @@ clean:
 	rm -rf src/$(PACKAGE)/*__pycache__
 	rm -rf ./build/ ./dist/ ./docs/_build/
 	rm .coverage
+
+update-template:
+	# git diff --quiet
+	pipx install pyscaffold
+	pipx inject pyscaffold /Users/eric/repos/extra/playwith-pyscaffold/pyscaffoldext-eric-extension
+	pipx run pyscaffold putup ../project-using-eric-extension --update --eric-ext

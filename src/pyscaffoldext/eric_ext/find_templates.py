@@ -212,7 +212,7 @@ def get_template_from_fpath(fpath: Path) -> Template:
 def get_all_template_fpaths_relative_to_templates_dir(
     templates_dir: Path,
 ) -> List[Path]:
-    template_fpaths: List[Path] = templates_dir.glob("**/*template.*")
+    template_fpaths: List[Path] = templates_dir.glob("**/*template*")
     template_fpaths_relative_to_template_dir = [
         path.relative_to(templates_dir) for path in template_fpaths
     ]
@@ -220,7 +220,9 @@ def get_all_template_fpaths_relative_to_templates_dir(
 
 
 def remove_template_from_string(string: str) -> Path:
-    fname_without_dot_template = string.replace("template.", "").replace("template", "")
+    fname_without_dot_template = (
+        string.replace("template_", "").replace("template.", "").replace("template", "")
+    )
     return fname_without_dot_template
 
 

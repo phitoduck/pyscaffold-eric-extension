@@ -26,3 +26,13 @@ ignore=
 
     # invalid escape sequence in string such as '\[' with rich; pylint catches this
     W605,
+
+    ##############################################
+    # - pydocstyle / flake8-docstring warnings - #
+    ##############################################
+
+    # doc in __init__ (because it is often just silly)
+    D107,
+
+    # Multi-line docstring summary should start at the first line
+    D212,
